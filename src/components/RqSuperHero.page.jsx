@@ -21,6 +21,10 @@ function RQSuperHero() {
       // enabled: false, // it will not run on initial Load
       onSuccess,
       onError,
+      select: (data) => {
+        const updatedData = data.data.map((hero) => hero.name);
+        return updatedData;
+      },
     }
   );
 
@@ -34,9 +38,9 @@ function RQSuperHero() {
 
   return (
     <>
-      <h2>Super Heroes Page</h2>
-      {data?.data?.map((hero) => {
-        return <div key={hero.name}>{hero.name}</div>;
+      <h2>React Query Super Heroes Page</h2>
+      {data.map((hero) => {
+        return <div key={hero}>{hero}</div>;
       })}
     </>
   );
