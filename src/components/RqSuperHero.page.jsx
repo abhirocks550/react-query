@@ -2,13 +2,25 @@ import axios from "axios";
 import { useQuery } from "react-query";
 
 function RQSuperHero() {
+  const onSuccess = () => {
+    console.log("Performs side effects after fetching");
+  };
+
+  const onError = () => {
+    console.log("Performs actions on Error");
+  };
+
   const { isLoading, data, isError, error } = useQuery(
     "super-heroes",
     () => {
       return axios.get("http://localhost:4000/superheroes");
     },
     {
-      staleTime: 60000 * 5,
+      // staleTime: 300000, // Data will not be fetched before 5 minutes
+      // refetchInterval: 2000, // Polling. fetch every 2 seconds
+      // enabled: false, // it will not run on initial Load
+      onSuccess,
+      onError,
     }
   );
 
