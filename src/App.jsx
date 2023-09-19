@@ -1,10 +1,12 @@
 import { Link, Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+
 import "./App.css";
 import Home from "./components/Home.page";
 import SuperHero from "./components/SuperHero.page";
 import RqSuperHero from "./components/RqSuperHero.page";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
+import SingleHero from "./components/RQSingleHero.page";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +32,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/superhero" element={<SuperHero />} />
+              <Route path="/heroes/:id" element={<SingleHero />} />
               <Route path="/rqsuperhero" element={<RqSuperHero />} />
             </Routes>
           </div>

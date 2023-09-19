@@ -13,10 +13,10 @@ export default function useSuperHeroesData(onSuccess, onError) {
       // enabled: false, // it will not run on initial Load
       onSuccess,
       onError,
-      select: (data) => {
-        const updatedData = data.data.map((hero) => hero.name);
-        return updatedData;
-      },
+      // select: (data) => {
+      //   const updatedData = data.data.map((hero) => hero.name);
+      //   return updatedData;
+      // },
     }
   );
 }
