@@ -7,6 +7,8 @@ import Home from "./components/Home.page";
 import SuperHero from "./components/SuperHero.page";
 import RqSuperHero from "./components/RqSuperHero.page";
 import SingleHero from "./components/RQSingleHero.page";
+import ParallelQueries from "./components/ParallelQueries.page";
+import NavBar from "./components/NavBar";
 
 const queryClient = new QueryClient();
 
@@ -16,24 +18,13 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <Router>
           <div>
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/superhero">SuperHero</Link>
-                </li>
-                <li>
-                  <Link to="/rqsuperhero">RQ SuperHero</Link>
-                </li>
-              </ul>
-            </nav>
+            <NavBar />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/superhero" element={<SuperHero />} />
               <Route path="/heroes/:id" element={<SingleHero />} />
               <Route path="/rqsuperhero" element={<RqSuperHero />} />
+              <Route path="/parallel" element={<ParallelQueries />} />
             </Routes>
           </div>
         </Router>

@@ -15,5 +15,15 @@
       "name": "Wonder Woman",
       "alterEgo": "Princess Diana"
     }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "Abhijit Kulkarni"
+    },
+    {
+      "id": 2,
+      "name": "Sanket Sonawane"
+    }
   ]
 }
