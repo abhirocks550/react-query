@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 
 function RQSuperHero() {
   const { isLoading, data, isError, error } = useQuery("super-heroes", () => {
-    return axios.get("http://localhost:4000/superheroesq");
+    return axios.get("http://localhost:4000/superheroes");
   });
 
   if (isLoading) {
